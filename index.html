@@ -267,16 +267,25 @@
   .reels-head .mono{color:var(--orange);}
   .reels-head .rule{flex:1;height:1px;background:rgba(245,244,241,.15);}
   .reels-track{
-    display:flex;gap:20px;overflow-x:auto;padding-bottom:14px;scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
+    display:flex;gap:18px;overflow-x:auto;padding:6px 50vw;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scroll-behavior:smooth;
   }
-  .reels-track::-webkit-scrollbar{height:6px;}
-  .reels-track::-webkit-scrollbar-thumb{background:rgba(245,244,241,.2);border-radius:4px;}
+  .reels-track::-webkit-scrollbar{display:none;}
+  .reels-track{scrollbar-width:none;}
   .reel-item{
-    flex:0 0 auto;width:min(300px,80vw);scroll-snap-align:start;
-    background:#fff;border-radius:8px;overflow:hidden;
+    flex:0 0 auto;width:min(280px,74vw);aspect-ratio:9/16;scroll-snap-align:center;
+    background:#fff;border-radius:14px;overflow:hidden;position:relative;
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
   }
-  .reel-item iframe,.reel-item blockquote{width:100% !important;margin:0 !important;}
+  .reel-item iframe{position:absolute !important;inset:0 !important;width:100% !important;height:100% !important;border:0 !important;}
+  .reel-item blockquote.instagram-media{
+    width:100% !important;height:100% !important;min-width:0 !important;max-width:100% !important;
+    margin:0 !important;position:absolute !important;inset:0 !important;
+  }
+  .reel-hint{
+    text-align:center;margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:0.68rem;
+    text-transform:uppercase;letter-spacing:0.05em;color:rgba(245,244,241,.4);
+  }
 
   /* ===== TESTIMONIALS ===== */
   .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
@@ -623,6 +632,7 @@
           </blockquote>
         </div>
       </div>
+      <div class="reel-hint">← Swipe to see more →</div>
     </div>
   </section>
 
