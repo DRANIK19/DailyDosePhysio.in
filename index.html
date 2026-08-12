@@ -118,7 +118,7 @@
   .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
   .mobile-navlink{
     font-family:'Archivo Black',sans-serif;font-size:1.15rem;text-transform:uppercase;
-    padding:14px 0;border-bottom:1px solid var(--line);display:block;
+    padding:16px 0;border-bottom:1px solid var(--line);display:block;min-height:44px;
   }
   .mobile-book-btn{justify-content:center;margin-top:auto;}
   .menu-overlay{
@@ -397,21 +397,31 @@
   @media (max-width:920px){
     nav .nav-links{display:none;}
     .nav-cta{display:none;}
-    .menu-btn{display:none;}
+    .menu-btn{display:block;}
     .logo-mark{font-size:1.3rem;gap:10px;}
     .logo-mark img{height:48px;width:48px;}
     .hero-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;max-width:280px;margin:0 auto 20px;}
+    .hero-ctas .btn{flex:1 1 auto;text-align:center;justify-content:center;}
     .services-grid{grid-template-columns:1fr;}
     .about .wrap{grid-template-columns:1fr;gap:40px;}
     .about-visual{max-width:320px;margin:0 auto;}
+    .about-stats{gap:28px;}
     .ig-grid{grid-template-columns:repeat(2,1fr);}
     .ig-tile.feature{grid-column:span 2;grid-row:span 1;aspect-ratio:2/1;}
+    .ig-follow{flex-direction:column;align-items:flex-start;}
+    .ig-follow .btn{width:100%;justify-content:center;}
     .testimonials-grid{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr 1fr;}
     .founder-note .wrap{max-width:100%;}
     .reels-track{padding:6px 12vw;}
     section{padding:80px 0;}
+  }
+  @media (max-width:640px){
+    .services-grid{grid-template-columns:1fr;}
+    .service-card{padding:38px 26px;}
+    .about-stats{flex-direction:column;gap:20px;}
+    .book-cta .wrap{padding:0 4px;}
   }
   @media (max-width:560px){
     .wrap{padding:0 20px;}
@@ -420,15 +430,26 @@
     .logo-mark img{height:40px;width:40px;}
     .hero{padding:110px 20px 60px;}
     .hero h1{font-size:clamp(2rem,9vw,2.8rem);}
+    .hero p.lead{font-size:0.98rem;}
+    .hero-ctas{flex-direction:column;}
+    .hero-ctas .btn{width:100%;}
+    .ticker-track span{font-size:0.72rem;padding:0 16px;}
+    .section-head{margin-bottom:44px;}
+    .section-head h2{font-size:clamp(1.6rem,7vw,2.2rem);}
+    .ig-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
     .footer-grid{grid-template-columns:1fr;}
+    .founder-note{padding:0;}
     .founder-note p:first-of-type{font-size:1.1rem;}
     .founder-note p{font-size:0.95rem;}
+    .statement{padding:90px 0;}
     .statement h2{font-size:clamp(1.5rem,7vw,2.2rem);}
     .location-info{padding:32px 22px;}
     .reels-track{padding:6px 8vw;gap:14px;}
     .reel-item{width:min(240px,72vw);}
+    .book-cta{padding:80px 0;}
     .book-cta h2{font-size:clamp(1.7rem,8vw,2.6rem);}
-    .ig-grid{gap:8px;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:16px;}
+    .btn{padding:14px 22px;font-size:0.74rem;}
   }
 
   @media (prefers-reduced-motion:reduce){
